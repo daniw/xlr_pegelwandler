@@ -1,0 +1,43 @@
+% coding:utf-8
+
+\section{Schaltung}
+
+\subsection{Variante 1}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=\schscale]{fig/xlr_pegelwandler_01_sch_var1.pdf}
+	\caption{Variante 1}
+	\label{sch:var1}
+\end{figure}
+
+\subsection{Funktion}
+Die beiden Kanäle sind identisch aufgebaut. Nachfolgend wird die Funktionsweise anhand der Teilschaltung 10x gezeigt. R101 fungiert als Pull-Up Widerstand. Um Störungen durch das lange Kabel des an CON101 angeschlossenen Tasters zu verringern ist dieser relativ niederohmig ausgeführt. C101 filtert hochfrequente Störungen und stellt einen gewissen Schutz der Basis von V101 gegen ESD dar. R105 begrenzt den Strom durch die Basis von V101. Wird nun der Taster gedrückt, wird fliesst Strom durch die Basis von V101, worauf dieser beginnt zu leiten. Dadurch fliesst Strom in die Basis von V102. Dies bewirkt, dass V102 leitet. Dadurch wird das Ausgangssignal der Schaltung nach GND gezogen. Wird der Taster wieder losgelassen, sperrt V101, worauf auch V102 sparrt. Das Ausgangssignal wird durch R104 zur Betriebsspannung des Controllers gezogen. 
+
+Aufgrund des geringeren Schaltungsaufwandes von Variante 2 wird mit dieser weiter verfahren. 
+
+\subsubsection{Dimensionierung}
+\[ \begin{matrix} R101 = \frac{U_B}{I_{sw}}\\
+U_B = 6.6 V\\
+I_\sw = 20 mA\\
+\Rightarrow R101 = \frac{6.6V}{20mA} = 330 \Ohm
+\end{matrix} \]
+
+
+% \subsection{Variante 2}
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[scale=\schscale]{fig/xlr_pegelwandler_01_sch_var1.pdf}
+% 	\caption{Variante 2}
+% 	\label{sch:var2}
+% \end{figure}
+
+% \subsection{Funktion}
+% Durch Drücken des Tasters wird V201 leitend. Dadurch wird das Ausgangssignal Low. Wird der Taster wieder losgelassen, sperrt V201 und R203 zieht das Ausgangssignal zur Betriebsspannung des Controllers. 
+
+% \subsection{Dimensionierung}
+% \[ \begin{matrix} R101 = \frac{U_B}{I_{sw}}\\
+% U_B = 6.6 V\\
+% I_\sw = 20 mA\\
+% \Rightarrow R101 = \frac{6.6V}{20mA} = 330 \Ohm
+% \end{matrix} \]
+
