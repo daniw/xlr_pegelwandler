@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.toc
+*.out
+*.tmp
+*.bak
+xlr_pegelwandler_main.pdf
+*.s#*
+*.b#*
+
