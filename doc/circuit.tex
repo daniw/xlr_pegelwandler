@@ -11,15 +11,18 @@
 \end{figure}
 
 \subsection{Funktion}
-Die beiden Kanäle sind identisch aufgebaut. Nachfolgend wird die Funktionsweise anhand der Teilschaltung 10x gezeigt. R101 fungiert als Pull-Up Widerstand. Um Störungen durch das lange Kabel des an CON101 angeschlossenen Tasters zu verringern ist dieser relativ niederohmig ausgeführt. C101 filtert hochfrequente Störungen und stellt einen gewissen Schutz der Basis von V101 gegen ESD dar. R105 begrenzt den Strom durch die Basis von V101. Wird nun der Taster gedrückt, wird fliesst Strom durch die Basis von V101, worauf dieser beginnt zu leiten. Dadurch fliesst Strom in die Basis von V102. Dies bewirkt, dass V102 leitet. Dadurch wird das Ausgangssignal der Schaltung nach GND gezogen. Wird der Taster wieder losgelassen, sperrt V101, worauf auch V102 sparrt. Das Ausgangssignal wird durch R104 zur Betriebsspannung des Controllers gezogen. 
-
-Aufgrund des geringeren Schaltungsaufwandes von Variante 2 wird mit dieser weiter verfahren. 
+Die beiden Kanäle sind identisch aufgebaut. Nachfolgend wird die Funktionsweise anhand der Teilschaltung 10x gezeigt. R101 fungiert als Pull-Up Widerstand. Um Störungen durch das lange Kabel des an CON101 angeschlossenen Tasters zu verringern ist dieser relativ niederohmig ausgeführt. C101 filtert hochfrequente Störungen und stellt einen gewissen Schutz der Basis von V101 gegen ESD dar. V101 und V102 arbeiten als Schalter in Emitterschaltung. Im Ruhezustand sperren beide Transistoren. Das Ausgangssignal ist HIGH. Wird der Taster gedrückt, sinkt die Spannung am Eingang der Schaltung. Dadurch wird V101 leitend die Spannung am Kollektor von V101 steigt. Dies bewirkt, dass V102 letitend wird und die Ausgangsspannung LOW wird. 
 
 \subsubsection{Dimensionierung}
-\[ \begin{array}{l} R101 = \frac{U_B}{I_{sw}}\\
+\[ \begin{array}{l}
+R101 = \frac{U_B}{I_{sw}}\\
 U_B = 6.6 V\\
 I_{sw} = 20 mA\\
 \Rightarrow R101 = \frac{6.6V}{20mA} = \underline{\underline{330 \Omega}}
+\end{array} \]
+%
+\[ \begin{array}{l}
+P_{R101} = \frac{{U_{R101}}^2}{R101} = \frac{{U_{Bat_{max}}}^2}{R101} = \frac{7.2 V}{330 \Omega} = 157 mW
 \end{array} \]
 
 \subsection{Layout}
