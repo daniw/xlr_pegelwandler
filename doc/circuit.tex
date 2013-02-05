@@ -10,9 +10,10 @@ Es soll eine Schaltung entwickelt werden, mit welcher zwei Taster ausgewertet we
     \textbf{Anforderung}        & \textbf{Wert} \\
     Schalterstrom               & $20 mA$ \\
     Ausgangsstrom               & $0.2 mA$ \\
-    Akku                        & 2S LiFePO4 \\
-    $\rightarrow U_{B_{min}}$   & $7.3 V$ \\
-    $\rightarrow U_{B_{max}}$   & $5 V$ \\
+    Akku                        & 2S LiFePO4: \\
+    $\rightarrow U_B$           & $6.6 V$ \\
+    $\rightarrow U_{B_{min}}$   & $5 V$ \\
+    $\rightarrow U_{B_{max}}$   & $7.3 V$ \\
     Ausgangspegel               & Kompatibel zu AVR: \\
     $\rightarrow U_{O_L}$       & $\leq 0.3 \cdot V_{cc} = 1.5 V$ \\
     $\rightarrow U_{O_H}$       & $\geq 0.6 \cdot V_{cc} = 3 V$ \\
@@ -33,17 +34,62 @@ Die beiden Kanäle sind identisch aufgebaut. Nachfolgend wird die Funktionsweise
 
 \subsubsection{Dimensionierung}
 \[ \begin{array}{l}
-R101 = \frac{U_B}{I_{sw}}\\
+R101 = \dfrac{U_B}{I_{sw}}\\
 U_B = 6.6 V\\
 I_{sw} = 20 mA\\
-\Rightarrow R101 = \frac{6.6V}{20mA} = \underline{\underline{330 \Omega}}
+\Rightarrow R101 = \dfrac{6.6V}{20mA} = \underline{\underline{330 \Omega}}
 \end{array} \]
 \[ \begin{array}{l}
-P_{R101} = \frac{{U_{R101}}^2}{R101} = \frac{{U_{Bat_{max}}}^2}{R101} = \frac{7.2 V}{330 \Omega} = 157 mW
+P_{R101} = \dfrac{{U_{R101}}^2}{R101} = \dfrac{{U_{Bat_{max}}}^2}{R101} = \dfrac{7.3 V}{330 \Omega} = 161 mW
+\end{array} \]
+Die Leistung an $R101$ ist am höchsten, da die anderen Widerstände um Grössenordnungen hochohmiger sind. Für $R101$ wird ein SMD Widerstand der Baugrösse 1206 verwendet. Für alle anderen Widerstände genügt die Baugrösse 0805. 
+%
+\[ \begin{array}{l}
+R104 = \dfrac{5 V - U_{O_H}}{I_O} = \dfrac{5 V - 3 V}{0.2 mA} = \underline{\underline{10 k \Omega}}\\
+\end{array} \]
+%
+Auswahl Transistoren: \\
+\begin{tabular}{lll}
+$V101$ & BC857A & 61 15 88 \\
+$V102$ & BC847A & 61 03 79 \\
+\end{tabular}
+%
+\[ \begin{array}{l}
+I_{B_{V102}} 
+= \dfrac{I_{C_{V102}} \cdot ü}{\beta} 
+= \dfrac{\dfrac{U_{cc} - U_{CE_{V102}}}{R104} \cdot ü}{\beta_{V102_{min}}} 
+= \dfrac{\dfrac{5V - 0.2V}{10 k\Omega} \cdot 3}{110} = 11.73 \mu A\\\\
+R103_{max} 
+= \dfrac{U_{B_{min}} - U_{CE_{V101}} - U_{BE_{V102}}}{I_{B_{V102}}} 
+= \dfrac{5 V - 0.2 V - 0.7 V}{11.73 \mu A} 
+= 349.6 k \Omega\\\\
+\rightarrow \underline{\underline{330 k\Omega}}
+\end{array} \]
+%
+Für die Dimensionierung von $R1055$ wird der Basisstrom vom $V102$ vernachlässigt. Als Kollektorstrom $I_{C_{V101}}$ werden $0.2 mA$ festgelegt. 
+\[ \begin{array}{l}
+R105_{max} 
+= \dfrac{U_{B_{min}} - U_{CE_{V101}}}{I_{C_{V101}}} 
+= \dfrac{5 V - 0.2 V}{0.2 mA} = \underline{\underline{24 k \Omega}}\\
 \end{array} \]
 %
 \[ \begin{array}{l}
-R104 = \frac{5 V - U_{O_H}}{I_O} = \frac{5 V - 3 V}{0.5 mA} = 
+R102 
+= \dfrac{U_{B_{min}} - U_{BE_{V101}}}{I_{B_{V101}}}\\\\
+I_{B_{V101}} 
+= \dfrac{I_{C_{V101}} \cdot ü}{\beta}\\\\
+I_{C_{V101}} 
+= I_{R105} + I_{R103} 
+= \dfrac{U_{B_{min}} - U_{CE_{V101}}}{R105} + \dfrac{U_{B_{min}} - U_{CE_{V101}} - U_{BE_{V102}}}{R103} \\\\
+= \dfrac{5 V - 0.2 V}{24 k \Omega} + \dfrac{5 V - 0.2 V - 0.7 V}{330 k \Omega} 
+= 0.2 mA + 12.42 \mu A 
+= 212.42 \mu A \\\\
+I_{B_{V101}} 
+= \dfrac{212.42 \mu A \cdot 3}{125} 
+= 0.298 \mu A \\\\
+R102_{max} 
+= \dfrac{5 V - 0.7 V}{0.298 \mu A} 
+= 14.4 M \Omega
 \end{array} \]
 
 \subsection{Layout}
