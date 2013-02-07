@@ -1,0 +1,31 @@
+Bereits Kunde: Ja/Nein
+Kundennummer: -
+Firma: -
+Name: -
+Vorname: -
+Strasse: -
+Hausnummer: -
+Postleitzahl: -
+Ort: -
+
+Email: -
+Telefon: -
+
+Layout 1
+Name: -
+x (in mm): -
+y (in mm): -
+Mindestmenge: -
+Überproduzierte: -
+Anmerkungen: -
+
+Layout n
+Name: -
+x (in mm): -
+y (in mm): -
+Mindestmenge: -
+Überproduzierte: -
+Anmerkungen: -
+.
+.
+.

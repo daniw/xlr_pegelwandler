@@ -1,0 +1,21 @@
+Bereits Kunde: 
+Kundennummer: 
+Firma: -
+Name: 
+Vorname: 
+Strasse: 
+Hausnummer: 
+Postleitzahl: 
+Ort: 
+
+Email: 
+Telefon: 
+
+Layout 1
+Name: xlr_pegelwandler_v_1_0.brd
+x (in mm): 23.876
+y (in mm): 23.876
+Mindestmenge: 2
+Überproduzierte: Alle gelieferten
+Anmerkungen: Kein Bestückungsdruck ausser ID
+           : Lieferadresse in der Schweiz
