@@ -92,6 +92,12 @@ R102_{max}
 = 843.4 k \Omega 
 \rightarrow \underline{\underline{820 k \Omega}}
 \end{array} \]
+%
+$C101$ dient dazu, Störungen zu reduzieren. Dazu bildet er mit $R101$ zusammen einen Tiefpass. $R102$ kann für diese Betrachtung vernachlässigt werden. Als Grenzfrequenz $f_g$ wird willkürlich ein Wert von $5 kHz$ angenommen. 
+\[ f_g = \dfrac{1}{2 \cdot \pi \cdot R101 \cdot C101} \]
+\[ C101 = \dfrac{1}{2 \cdot \pi \cdot R101 \cdot f_g} 
+= C101 = \dfrac{1}{2 \cdot \pi \cdot 330 \Omega \cdot 5 kHz} = 96.56 nF 
+\rightarrow \underline{\underline{100 nF}} \]
 
 \subsection{Layout}
 Die Platine wird direkt an den XLR-Stecker vom Typ NC3MD-V von Neutrik angelötet. Die Verbindung zu einem Arduino erfolgt über eine Steckerleiste. Alle übrigen Bauteile sind in SMD mit der Baugrösse 0805 bzw. 1206 ausgeführt. Die Grösse der Platine ist auf den Steckverbinder angepasst, so dass dieser mit der angelöteten Platine montiert werden kann. 
