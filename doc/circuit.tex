@@ -23,17 +23,11 @@ I_{sw} = 20 mA\\
 \[ \begin{array}{l}
 P_{R101} = \dfrac{{U_{R101}}^2}{R101} = \dfrac{{U_{Bat_{max}}}^2}{R101} = \dfrac{7.3 V}{330 \Omega} = 161 mW
 \end{array} \]
-Die Leistung an $R101$ ist am höchsten, da die anderen Widerstände um Grössenordnungen hochohmiger sind. Für $R101$ wird ein SMD Widerstand der Baugrösse 1206 verwendet. Für alle anderen Widerstände genügt die Baugrösse 0805. 
+Die Leistung an $R101$ ist am grössten, da die anderen Widerstände um Grössenordnungen hochohmiger sind. Für $R101$ wird ein SMD Widerstand der Baugrösse 1206 verwendet. Für alle anderen Widerstände genügt die Baugrösse 0805. 
 %
 \[ \begin{array}{l}
 R104 = \dfrac{5 V - U_{O_H}}{I_O} = \dfrac{5 V - 3 V}{0.2 mA} = \underline{\underline{10 k \Omega}}\\
 \end{array} \]
-%
-Auswahl Transistoren: \\
-\begin{tabular}{lll}
-$V101$ & BC857A & 61 15 88 \\
-$V102$ & BC847A & 61 03 79 \\
-\end{tabular}
 %
 \[ \begin{array}{l}
 I_{B_{V102}} 
@@ -47,7 +41,7 @@ R103_{max}
 \rightarrow \underline{\underline{330 k\Omega}}
 \end{array} \]
 %
-Für die Dimensionierung von $R1055$ wird der Basisstrom vom $V102$ vernachlässigt. Als Kollektorstrom $I_{C_{V101}}$ werden $0.2 mA$ festgelegt. 
+Für die Dimensionierung von $R105$ wird der Basisstrom vom $V102$ vernachlässigt. Als Kollektorstrom $I_{C_{V101}}$ werden $0.2 mA$ festgelegt. 
 \[ \begin{array}{l}
 R105_{max} 
 = \dfrac{U_{B_{min}} - U_{CE_{V101}}}{I_{C_{V101}}} 
