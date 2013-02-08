@@ -7,4 +7,6 @@
 xlr_pegelwandler_main.pdf
 *.s#*
 *.b#*
+*.net
+*.raw
 datasheets/

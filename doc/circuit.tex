@@ -2,26 +2,7 @@
 
 \section{Schaltung}
 
-\subsection{Anforderungen}
-Es soll eine Schaltung entwickelt werden, mit welcher zwei Taster ausgewertet werden können, welche mit einem XLR-Stecker verbunden werden. Da die Schalter über lange Kabel mit der Elektronik verbunden sind, soll durch diese ein relativ hoher Strom fliessen, um Störungen zu vermeiden. 
-
-\begin{table}[h!]
-  \begin{tabular}{@{}ll}
-    \textbf{Anforderung}        & \textbf{Wert} \\
-    Schalterstrom               & $20 mA$ \\
-    Ausgangsstrom               & $0.2 mA$ \\
-    Akku                        & 2S LiFePO4: \\
-    $\rightarrow U_B$           & $6.6 V$ \\
-    $\rightarrow U_{B_{min}}$   & $5 V$ \\
-    $\rightarrow U_{B_{max}}$   & $7.3 V$ \\
-    Ausgangspegel               & Kompatibel zu AVR: \\
-    $\rightarrow U_{O_L}$       & $\leq 0.3 \cdot V_{cc} = 1.5 V$ \\
-    $\rightarrow U_{O_H}$       & $\geq 0.6 \cdot V_{cc} = 3 V$ \\
-    
-  \end{tabular}
-\end{table}
-
-\subsection{Schema}
+\section{Schema}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=\schscale]{fig/xlr_pegelwandler_v_1_2_sch.pdf}
