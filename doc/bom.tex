@@ -41,6 +41,7 @@
 %   \end{tabular}
 % \end{table}
 
+\subsection{Stückliste für eine Platine}
 \STautoround*{2}
 \begin{table}[h!]
   \begin{spreadtab}{{tabular}{@{}l@{}lllll}}
@@ -62,6 +63,33 @@
     @ \rowcolor{white} & 2 & @ Senkkopfschraube M3 x ??      & @ 34 32 3? & 0.000 &  \\
     @ \rowcolor{lgray} & 2 & @ Mutter M3                     & @ 34 82 75 & 0.153&  \\
     @ \rowcolor{white} & 2 & @ Fächerscheibe für M3          & @ 34 82 48 & 0.098&  \\&&&&\\
+    @ \rowcolor{white} &   & @ Total                         & @          &      & :={sum(f3:[0,-2])}
+  \end{spreadtab}
+\end{table}
+
+\subsection{Stückliste für gesamtes Gerät}
+\STautoround*{2}
+\begin{table}[h!]
+  \begin{spreadtab}{{tabular}{@{}l@{}lllll}}
+    @ & @ Anzahl  & @ Bezeichnung & @ Bestellnummer & @ Einzelpreis & @ Gesamtpreis \\
+    @ & @ \lbrack Stk\rbrack && @ (Distrelec) & @ \lbrack Fr.\rbrack & @ \lbrack Fr.\rbrack \\
+    @ \rowcolor{lgray} & 1 & @ Gehäuse                       & @          & 20.00& \STcopy{v}{b3*[-1,0]}\\
+    @ \rowcolor{white} & 2 & @ Platine                       & @          & 4.536& \STcopy{v}{b3*[-1,0]}\\
+    @ \rowcolor{lgray} & 2 & @ Neutrik NC3MD-V               & @ 15 98 55 & 8.30 &  \\
+    @ \rowcolor{white} & 4 & @ BC847A                        & @ 61 03 79 & 0.29 &  \\
+    @ \rowcolor{lgray} & 4 & @ BC857A                        & @ 61 15 88 & 0.27 &  \\
+    @ \rowcolor{white} & 4 & @ Widerstand 330 $\Omega$ 1206  & @ 71 12 86 & 0.089&  \\
+    @ \rowcolor{lgray} & 4 & @ Widerstand 10 k$\Omega$ 0805  & @ 71 33 18 & 0.069&  \\
+    @ \rowcolor{white} & 4 & @ Widerstand 24 k$\Omega$ 0805  & @ 71 33 27 & 0.069&  \\
+    @ \rowcolor{lgray} & 4 & @ Widerstand 330 k$\Omega$ 0805 & @ 71 33 54 & 0.069&  \\
+    @ \rowcolor{white} & 4 & @ Widerstand 820 k$\Omega$ 0805 & @ 71 33 64 & 0.069&  \\
+    @ \rowcolor{lgray} & 4 & @ Kondensator 100 nF 0805       & @ 83 14 69 & 0.15 &  \\
+    @ \rowcolor{white} & 2 & @ Stiftleiste Dubox 5p Pol      & @ 11 67 33 & 1.70 &  \\
+    @ \rowcolor{lgray} & 2 & @ Buchsengehäuse Dubox 5 Pol    & @ 11 67 03 & 1.10 &  \\
+    @ \rowcolor{white} &10 & @ Crimpkontakt Dubox            & @ 11 67 29 & 0.70 &  \\
+    @ \rowcolor{lgray} & 4 & @ Senkkopfschraube M3 x ??      & @ 34 32 3? & 0.000 &  \\
+    @ \rowcolor{white} & 4 & @ Mutter M3                     & @ 34 82 75 & 0.153&  \\
+    @ \rowcolor{lgray} & 4 & @ Fächerscheibe für M3          & @ 34 82 48 & 0.098&  \\&&&&\\
     @ \rowcolor{white} &   & @ Total                         & @          &      & :={sum(f3:[0,-2])}
   \end{spreadtab}
 \end{table}
