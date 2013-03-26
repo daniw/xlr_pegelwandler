@@ -44,7 +44,7 @@
 \subsection{Stückliste für eine Platine}
 \STautoround*{2}
 \begin{table}[h!]
-  \begin{spreadtab}{{tabular}{@{}l@{}lllll}}
+  \begin{spreadtab}{{tabular}{@{}l@{}lllrr}}
     @ & @ Anzahl  & @ Bezeichnung & @ Bestellnummer & @ Einzelpreis & @ Gesamtpreis \\
     @ & @ \lbrack Stk\rbrack && @ (Distrelec) & @ \lbrack Fr.\rbrack & @ \lbrack Fr.\rbrack \\
     @ \rowcolor{lgray} & 1 & @ Platine                       & @          & 4.536& \STcopy{v}{b3*[-1,0]}\\
@@ -60,21 +60,28 @@
     @ \rowcolor{lgray} & 1 & @ Stiftleiste Dubox 5p Pol      & @ 11 67 33 & 1.70 &  \\
     @ \rowcolor{white} & 1 & @ Buchsengehäuse Dubox 5 Pol    & @ 11 67 03 & 1.10 &  \\
     @ \rowcolor{lgray} & 5 & @ Crimpkontakt Dubox            & @ 11 67 29 & 0.70 &  \\
-    @ \rowcolor{white} & 2 & @ Senkkopfschraube M3 x ??      & @ 34 32 3? & 0.000 &  \\
+    @ \rowcolor{white} & 2 & @ Senkkopfschraube M3 x 12      & @ 34 32 38 & 0.185 &  \\
     @ \rowcolor{lgray} & 2 & @ Mutter M3                     & @ 34 82 75 & 0.153&  \\
     @ \rowcolor{white} & 2 & @ Fächerscheibe für M3          & @ 34 82 48 & 0.098&  \\&&&&\\
-    @ \rowcolor{white} &   & @ Total                         & @          &      & :={sum(f3:[0,-2])}
+    @ \rowcolor{white} &   & @ Total                         & @          &      & :={sum(f3:[0,-2])}\\
+    \cline{6-6}
+    \cline{6-6}
   \end{spreadtab}
 \end{table}
 
+\newpage
 \subsection{Stückliste für gesamtes Gerät}
+Die nachfolgende Stückliste zeigt nur die Mindestmenge für ein Gerät. 
+Dabei sind noch keine Reserven eingerechnet. \\
+Das Gehäuse ist nur ein Vorschlag. Es muss anhand der Grösse der restlichen 
+Komponenten des Gerätes ausgesucht werden. 
 \STautoround*{2}
 \begin{table}[h!]
-  \begin{spreadtab}{{tabular}{@{}l@{}lllll}}
+  \begin{spreadtab}{{tabular}{@{}l@{}lllrr}}
     @ & @ Anzahl  & @ Bezeichnung & @ Bestellnummer & @ Einzelpreis & @ Gesamtpreis \\
     @ & @ \lbrack Stk\rbrack && @ (Distrelec) & @ \lbrack Fr.\rbrack & @ \lbrack Fr.\rbrack \\
-    @ \rowcolor{lgray} & 1 & @ Gehäuse                       & @          & 20.00& \STcopy{v}{b3*[-1,0]}\\
-    @ \rowcolor{white} & 2 & @ Platine                       & @          & 4.536& \STcopy{v}{b3*[-1,0]}\\
+    @ \rowcolor{lgray} & 1 & @ Gehäuse Fibox ABS100/75 LT    & @ 30 29 93 & 12.10& \STcopy{v}{b3*[-1,0]}\\
+    @ \rowcolor{white} & 2 & @ Platine                       & @          & 4.536&  \\
     @ \rowcolor{lgray} & 2 & @ Neutrik NC3MD-V               & @ 15 98 55 & 8.30 &  \\
     @ \rowcolor{white} & 4 & @ BC847A                        & @ 61 03 79 & 0.29 &  \\
     @ \rowcolor{lgray} & 4 & @ BC857A                        & @ 61 15 88 & 0.27 &  \\
@@ -87,10 +94,12 @@
     @ \rowcolor{white} & 2 & @ Stiftleiste Dubox 5p Pol      & @ 11 67 33 & 1.70 &  \\
     @ \rowcolor{lgray} & 2 & @ Buchsengehäuse Dubox 5 Pol    & @ 11 67 03 & 1.10 &  \\
     @ \rowcolor{white} &10 & @ Crimpkontakt Dubox            & @ 11 67 29 & 0.70 &  \\
-    @ \rowcolor{lgray} & 4 & @ Senkkopfschraube M3 x ??      & @ 34 32 3? & 0.000 &  \\
+    @ \rowcolor{lgray} & 4 & @ Senkkopfschraube M3 x 12      & @ 34 32 38 & 0.185 &  \\
     @ \rowcolor{white} & 4 & @ Mutter M3                     & @ 34 82 75 & 0.153&  \\
     @ \rowcolor{lgray} & 4 & @ Fächerscheibe für M3          & @ 34 82 48 & 0.098&  \\&&&&\\
-    @ \rowcolor{white} &   & @ Total                         & @          &      & :={sum(f3:[0,-2])}
+    @ \rowcolor{white} &   & @ Total                         & @          &      & :={sum(f3:[0,-2])}\\
+    \cline{6-6}
+    \cline{6-6}
   \end{spreadtab}
 \end{table}
 
