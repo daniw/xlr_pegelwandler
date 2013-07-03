@@ -12,16 +12,17 @@
 
 \subsection{Funktion}
 Die beiden Kanäle sind identisch aufgebaut. Nachfolgend wird die Funktionsweise 
-anhand der Teilschaltung 10x gezeigt. R101 fungiert als Pull-Up Widerstand. Um 
-Störungen durch das lange Kabel des an CON101 angeschlossenen Tasters zu 
-verringern ist dieser relativ niederohmig ausgeführt. C101 filtert 
-hochfrequente Störungen und stellt einen gewissen Schutz der Basis von V101 
-gegen ESD dar. V101 und V102 arbeiten als Schalter in Emitterschaltung. Im 
-Ruhezustand sperren beide Transistoren. Das Ausgangssignal ist HIGH. Wird der 
-Taster gedrückt, sinkt die Spannung am Eingang der Schaltung. Dadurch wird V101 
-leitend die Spannung am Kollektor von V101 steigt. Dies bewirkt, dass V102 
-leitend wird und die Ausgangsspannung LOW wird. Beim Loslassen des Tasters 
-kehrt die Schaltung in ihren Ursprungszustand zurück. 
+anhand der Teilschaltung 10x gezeigt. 
+
+R101 fungiert als Pull-Up Widerstand. Um Störungen durch das lange Kabel des an 
+CON101 angeschlossenen Tasters zu verringern ist dieser niederohmig 
+ausgeführt. C101 filtert hochfrequente Störungen und stellt einen gewissen 
+Schutz der Basis von V101 gegen ESD dar. V101 und V102 arbeiten als Schalter in 
+Emitterschaltung. Im Ruhezustand sperren beide Transistoren. Das Ausgangssignal 
+ist HIGH. Wird der Taster gedrückt, sinkt die Spannung am Eingang der 
+Schaltung. Dadurch wird V101 leitend die Spannung am Kollektor von V101 steigt. 
+Dies bewirkt, dass V102 leitend wird und die Ausgangsspannung LOW wird. Beim 
+Loslassen des Tasters kehrt die Schaltung in ihren Ursprungszustand zurück. 
 
 \subsubsection{Dimensionierung}
 \[ \begin{array}{l}
