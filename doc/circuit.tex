@@ -11,7 +11,17 @@
 \end{figure}
 
 \subsection{Funktion}
-Die beiden Kanäle sind identisch aufgebaut. Nachfolgend wird die Funktionsweise anhand der Teilschaltung 10x gezeigt. R101 fungiert als Pull-Up Widerstand. Um Störungen durch das lange Kabel des an CON101 angeschlossenen Tasters zu verringern ist dieser relativ niederohmig ausgeführt. C101 filtert hochfrequente Störungen und stellt einen gewissen Schutz der Basis von V101 gegen ESD dar. V101 und V102 arbeiten als Schalter in Emitterschaltung. Im Ruhezustand sperren beide Transistoren. Das Ausgangssignal ist HIGH. Wird der Taster gedrückt, sinkt die Spannung am Eingang der Schaltung. Dadurch wird V101 leitend die Spannung am Kollektor von V101 steigt. Dies bewirkt, dass V102 letitend wird und die Ausgangsspannung LOW wird. Beim Loslassen des Tasters kehrt die Schaltung in ihren Ursprungszustand zurück. 
+Die beiden Kanäle sind identisch aufgebaut. Nachfolgend wird die Funktionsweise 
+anhand der Teilschaltung 10x gezeigt. R101 fungiert als Pull-Up Widerstand. Um 
+Störungen durch das lange Kabel des an CON101 angeschlossenen Tasters zu 
+verringern ist dieser relativ niederohmig ausgeführt. C101 filtert 
+hochfrequente Störungen und stellt einen gewissen Schutz der Basis von V101 
+gegen ESD dar. V101 und V102 arbeiten als Schalter in Emitterschaltung. Im 
+Ruhezustand sperren beide Transistoren. Das Ausgangssignal ist HIGH. Wird der 
+Taster gedrückt, sinkt die Spannung am Eingang der Schaltung. Dadurch wird V101 
+leitend die Spannung am Kollektor von V101 steigt. Dies bewirkt, dass V102 
+leitend wird und die Ausgangsspannung LOW wird. Beim Loslassen des Tasters 
+kehrt die Schaltung in ihren Ursprungszustand zurück. 
 
 \subsubsection{Dimensionierung}
 \[ \begin{array}{l}
@@ -21,12 +31,17 @@ I_{sw} = 20 mA\\
 \Rightarrow R101 = \dfrac{6.6V}{20mA} = \underline{\underline{330 \Omega}}
 \end{array} \]
 \[ \begin{array}{l}
-P_{R101} = \dfrac{{U_{R101}}^2}{R101} = \dfrac{{U_{Bat_{max}}}^2}{R101} = \dfrac{7.3 V}{330 \Omega} = 161 mW
+P_{R101} = \dfrac{{U_{R101}}^2}{R101} = \dfrac{{U_{Bat_{max}}}^2}{R101} 
+= \dfrac{7.3 V}{330 \Omega} = 161 mW
 \end{array} \]
-Die Leistung an $R101$ ist am grössten, da die anderen Widerstände um Grössenordnungen hochohmiger sind. Für $R101$ wird ein SMD Widerstand der Baugrösse 1206 verwendet. Für alle anderen Widerstände genügt die Baugrösse 0805. 
+Die Leistung an $R101$ ist am grössten, da die anderen Widerstände um 
+Grössenordnungen hochohmiger sind. Für $R101$ wird ein SMD Widerstand der 
+Baugrösse 1206 verwendet. Für alle anderen Widerstände genügt die Baugrösse 
+0805. 
 %
 \[ \begin{array}{l}
-R104 = \dfrac{5 V - U_{O_H}}{I_O} = \dfrac{5 V - 3 V}{0.2 mA} = \underline{\underline{10 k \Omega}}\\
+R104 = \dfrac{5 V - U_{O_H}}{I_O} = \dfrac{5 V - 3 V}{0.2 mA} 
+= \underline{\underline{10 k \Omega}}\\
 \end{array} \]
 %
 \[ \begin{array}{l}
@@ -41,7 +56,8 @@ R103_{max}
 \rightarrow \underline{\underline{330 k\Omega}}
 \end{array} \]
 %
-Für die Dimensionierung von $R105$ wird der Basisstrom vom $V102$ vernachlässigt. Als Kollektorstrom $I_{C_{V101}}$ werden $0.2 mA$ festgelegt. 
+Für die Dimensionierung von $R105$ wird der Basisstrom vom $V102$ 
+vernachlässigt. Als Kollektorstrom $I_{C_{V101}}$ werden $0.2 mA$ festgelegt. 
 \[ \begin{array}{l}
 R105_{max} 
 = \dfrac{U_{B_{min}} - U_{CE_{V101}}}{I_{C_{V101}}} 
@@ -55,7 +71,8 @@ I_{B_{V101}}
 = \dfrac{I_{C_{V101}} \cdot ü}{\beta}\\\\
 I_{C_{V101}} 
 = I_{R105} + I_{R103} 
-= \dfrac{U_{B_{min}} - U_{CE_{V101}}}{R105} + \dfrac{U_{B_{min}} - U_{CE_{V101}} - U_{BE_{V102}}}{R103} \\\\
+= \dfrac{U_{B_{min}} - U_{CE_{V101}}}{R105} 
++ \dfrac{U_{B_{min}} - U_{CE_{V101}} - U_{BE_{V102}}}{R103} \\\\
 = \dfrac{5 V - 0.2 V}{24 k \Omega} + \dfrac{5 V - 0.2 V - 0.7 V}{330 k \Omega} 
 = 0.2 mA + 12.42 \mu A 
 = 212.42 \mu A \\\\
@@ -68,7 +85,9 @@ R102_{max}
 \rightarrow \underline{\underline{820 k \Omega}}
 \end{array} \]
 %
-$C101$ dient dazu, Störungen zu reduzieren. Dazu bildet er mit $R101$ zusammen einen Tiefpass. $R102$ kann für diese Betrachtung vernachlässigt werden. Als Grenzfrequenz $f_g$ wird willkürlich ein Wert von $5 kHz$ angenommen. 
+$C101$ dient dazu, Störungen zu reduzieren. Dazu bildet er mit $R101$ zusammen 
+einen Tiefpass. $R102$ kann für diese Betrachtung vernachlässigt werden. Als 
+Grenzfrequenz $f_g$ wird willkürlich ein Wert von $5 kHz$ angenommen. 
 \[ f_g = \dfrac{1}{2 \cdot \pi \cdot R101 \cdot C101} \]
 \[ C101 = \dfrac{1}{2 \cdot \pi \cdot R101 \cdot f_g} 
 = C101 = \dfrac{1}{2 \cdot \pi \cdot 330 \Omega \cdot 5 kHz} = 96.56 nF 
